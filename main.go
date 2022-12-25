@@ -29,7 +29,7 @@ func Routers() {
 	router.HandleFunc("/users/{id}",DeleteUser).Methods("DELETE")
 	router.HandleFunc("/login", loginHandler).Methods("POST")
 	router.HandleFunc("/register", registerHandler).Methods("POST")
-	http.ListenAndServe("",&CORSRouterDecorator{router})
+	http.ListenAndServe(&CORSRouterDecorator{router})
 }
 
 /***************************************************/
